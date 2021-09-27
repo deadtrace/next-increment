@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Next.js increment app (using Docker)
+=============
 
-## Getting Started
+Simple increment application using Next.js and Docker (ITMO University study task). LocalStorage is used as a storage for the counter.
+https://hub.docker.com/r/deadtrace/next-increment
 
-First, run the development server:
+Home Page (`/`)
+-------------------------
+![main-page](https://user-images.githubusercontent.com/46153650/134954190-62769a2d-0ab2-4333-9f81-a315c285d1a7.png)
+Counter info is shown to the user.
+
+
+Stat Page (`/stat`)
+------------------------
+![stat-page](https://user-images.githubusercontent.com/46153650/134954481-7e2a4930-26b3-496b-ba66-fc51e0bf502a.png)
+When a user visites this page, the counter updates every time. The page shows information that the counter was successfully updated and the new value.
+
+
+About Page (`/about`)
+------------------------
+![about-page](https://user-images.githubusercontent.com/46153650/134954923-a5a227c8-2e90-4b94-9b0a-ab93b01da221.png)
+Information about the author.
+
+
+How to launch
+-------------------------
 
 ```bash
-npm run dev
-# or
-yarn dev
+docker run -d -p 3000:3000 deadtrace/next-increment
+```
+OR (using Makefile in the directory of this repository)
+
+```bash
+make run
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Then navigate to http://localhost:3000.
