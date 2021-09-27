@@ -1,8 +1,16 @@
 import { Component, Fragment } from "react";
 
-class Home extends Component {
+class Stat extends Component {
   state = {
     count: 0,
+  };
+
+  handleIncrement = () => {
+    this.setState((prevState) => {
+      return {
+        count: ++prevState.count,
+      };
+    });
   };
 
   componentDidUpdate() {
@@ -16,16 +24,17 @@ class Home extends Component {
         return JSON.parse(data);
       });
     }
+    this.handleIncrement();
   }
 
   render() {
     return (
       <Fragment>
-        <div className="text">Счётчик</div>
+        <div className="text">Значение счётчика было увеличино</div>
         <div className="text">{this.state.count}</div>
       </Fragment>
     );
   }
 }
 
-export default Home;
+export default Stat;

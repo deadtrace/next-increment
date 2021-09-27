@@ -1,0 +1,19 @@
+.links {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.link {
+  width: 80px;
+  padding: 5px 10px;
+  border: 2px solid #008f11;
+  text-align: center;
+}
+
+.link + .link {
+  margin-left: 10px;
+}
